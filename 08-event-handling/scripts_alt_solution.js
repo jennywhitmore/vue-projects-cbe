@@ -3,6 +3,7 @@ Vue.createApp({
     return {
       x: 0,
       y: 0,
+      freezeCoordinates: false,
       fruitBasket: [
         "🍏 Apple",
         "🍌 Banana",
@@ -16,8 +17,10 @@ Vue.createApp({
   },
   methods: {
     mouseCoordinates(event) {
-      this.x = event.offsetX;
-      this.y = event.offsetY;
+      if (this.freezeCoordinates === false) {
+        this.x = event.offsetX;
+        this.y = event.offsetY;
+      }
     },
   },
 }).mount("#app");
