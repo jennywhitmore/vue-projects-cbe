@@ -19,5 +19,9 @@ Vue.createApp({
       this.x = event.offsetX;
       this.y = event.offsetY;
     },
+
+    removeItem(unwanted) {
+      this.fruitBasket = this.fruitBasket.filter((fruit) => fruit !== unwanted);
+    },
   },
 }).mount("#app");
