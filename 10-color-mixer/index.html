@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Color Mixer</title>
+</head>
+
+<body>
+    <div id="color-mixer">
+        <header>
+            <h1>Color Mixer</h1>
+            <div class="divContainer">
+                <div>
+                    <label class="redLabel" for="redSlider">R</label>
+                    <input type="range" id="redSlider" class="slider" min="0" max="255" v-model="redValue">
+                </div>
+                <div>
+                    <label class="greenLabel" for="greenSlider">G</label>
+                    <input type="range" id="greenSlider" class="slider" min="0" max="255" v-model="greenValue">
+                </div>
+                <div>
+                    <label class="blueLabel" for="blueSlider">B</label>
+                    <input type="range" id="blueSlider" class="slider" min="0" max="255" v-model="blueValue">
+                </div>
+                <div class="color-value">RGB: ({{ redValue }}, {{ greenValue }}, {{ blueValue }})</div>
+                <button @click="fetchRandomColor">Random Color</button>
+            </div>
+        </header>
+        <div class="color-field" :style="{ backgroundColor: `rgb(${redValue}, ${greenValue}, ${blueValue})` }"></div>
+    </div>
+
+    <script src="https://unpkg.com/vue@latest"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
