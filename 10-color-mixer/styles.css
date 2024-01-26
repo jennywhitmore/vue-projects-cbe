@@ -46,7 +46,7 @@ h1 {
 }
 
 .color-field {
-  height: 100vh;
+  height: 100vh; /* do not use % due to div not having height like that */
   display: flex;
   align-items: center;
   justify-content: center;
