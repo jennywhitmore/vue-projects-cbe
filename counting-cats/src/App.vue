@@ -2,10 +2,12 @@
   <h1>Count all cats by their color</h1>
   <h2>Total cats: {{ totalCount }}</h2>
   <AttendeeCounter
-    v-for="{ text } of attendeeCounters"
+    v-for="({ text, counter }, index) of attendeeCounters"
     :key="text"
     :text="text"
     :counter="counter"
+    @increase="handleIncrease(index)"
+    @decrease="handleDecrease(index)"
   />
 </template>
 
@@ -56,6 +58,16 @@ export default {
 
   components: {
     AttendeeCounter,
+  },
+  methods: {
+    handleIncrease(index) {
+      //console.log(this.attendeeCounters[index]);
+      this.attendeeCounters[index].counter += 1;
+    },
+    handleDecrease(index) {
+      //console.log(this.attendeeCounters[index]);
+      this.attendeeCounters[index].counter -= 1;
+    },
   },
 };
 </script>

@@ -12,6 +12,8 @@ export default {
     counter: Number,
   },
 
+  emits: ["increase", "decrease"],
+
   computed: {
     textStyle() {
       const colors = {
