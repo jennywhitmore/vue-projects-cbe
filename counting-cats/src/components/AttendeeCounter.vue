@@ -2,7 +2,6 @@
   <p :style="textStyle">{{ text }}: {{ counter }}</p>
   <button @click="increase">+</button>
   <button @click="decrease">-</button>
-  <hr />
 </template>
 
 <script>
@@ -53,5 +52,8 @@ h1 {
 }
 p {
   color: dodgerblue;
+}
+button {
+  margin: 0 5px 20px 5px;
 }
 </style>
